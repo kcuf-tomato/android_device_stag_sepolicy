@@ -14,3 +14,6 @@ hal_client_domain(system_server, hal_lineage_powershare)
 
 # ADB over network
 set_prop(system_server, shell_prop)
+
+# Long screenshot
+add_service(system_server, longshot_service)
