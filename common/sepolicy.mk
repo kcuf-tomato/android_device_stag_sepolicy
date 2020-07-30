@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from AOSiP
+# inherit from stag
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -16,20 +16,20 @@ endif
 endif
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/aosip/sepolicy/common/public
+    device/stag/sepolicy/common/public
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/aosip/sepolicy/common/private
+    device/stag/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/aosip/sepolicy/common/dynamic \
-    device/aosip/sepolicy/common/system
+    device/stag/sepolicy/common/dynamic \
+    device/stag/sepolicy/common/system
 else
 BOARD_SEPOLICY_DIRS += \
-    device/aosip/sepolicy/common/dynamic \
-    device/aosip/sepolicy/common/vendor
+    device/stag/sepolicy/common/dynamic \
+    device/stag/sepolicy/common/vendor
 endif
 
 # Selectively include legacy rules defined by the products
--include device/aosip/sepolicy/legacy-common/sepolicy.mk
+-include device/stag/sepolicy/legacy-common/sepolicy.mk
