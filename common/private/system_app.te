@@ -12,9 +12,11 @@ get_prop(system_app, vendor_security_patch_level_prop)
 hal_client_domain(system_app, hal_lineage_livedisplay)
 hal_client_domain(system_app, hal_lineage_touch)
 
-
 #Allow set Theme
 allow system_app theme_prop:property_service { set };
 allow system_app theme_prop:file { read open getattr };
 get_prop(system_app, theme_prop)
 set_prop(system_app, theme_prop)
+
+# Allow SetupWizard to set recovery update prop
+set_prop(system_app, recovery_update_prop)
