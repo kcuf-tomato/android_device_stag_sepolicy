@@ -6,7 +6,6 @@ net_domain(updater_app)
 binder_call(updater_app, update_engine)
 
 allow updater_app app_api_service:service_manager find;
->>>>>>> 2fe3cf3... common: Switch Updater app to its own SELinux domain
 allow updater_app system_api_service:service_manager find;
 allow updater_app update_engine_service:service_manager find;
 
