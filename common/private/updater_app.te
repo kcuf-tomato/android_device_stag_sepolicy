@@ -1,9 +1,10 @@
-type updater_app, domain, coredomain;
+type updater_app, domain, coredomain; 
 
 app_domain(updater_app)
 net_domain(updater_app)
 
 binder_call(updater_app, update_engine)
+binder_call(updater_app, gpuservice)
 
 allow updater_app app_api_service:service_manager find;
 allow updater_app recovery_service:service_manager find;
@@ -20,6 +21,10 @@ allow updater_app cache_recovery_file:file create_file_perms;
 
 allow updater_app ota_package_file:dir create_dir_perms;
 allow updater_app ota_package_file:file create_file_perms;
+
+allow updater_app system_data_file:dir { add_name create_dir_perms rw_dir_perms };
+allow updater_app system_data_file:file create_file_perms;
+allow updater_app theme_prop:file { read };
 
 get_prop(updater_app, default_prop)
 get_prop(updater_app, exported2_default_prop)
